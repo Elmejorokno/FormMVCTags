@@ -2,47 +2,46 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
     <head>
+        <link rel="stylesheet" href="../../resources/css/form.css">
         <title>Student Register</title>
     </head>
     <body>
-        <form:form action="register" method="post" modelAttribute="student">
-            Nombre: <form:input path="firstName" />
-            <form:errors path="firstName" />
+        <div class="form-container">
+            <h2>Registro de alumnos</h2>
+            <form:form action="register" method="post" modelAttribute="student">
+                <label>Nombre:</label>
+                <form:input path="firstName" />
+                <form:errors path="firstName" cssClass="error-message" />
 
-            <br/><br/><br/>
+                <label>Apellidos:</label>
+                <form:input path="lastName" />
+                <form:errors path="lastName" cssClass="error-message" />
 
-            Apellidos: <form:input path="lastName" />
-            <form:errors path="lastName" />
+                <label>Email:</label>
+                <form:input path="email" />
+                <form:errors path="email" cssClass="error-message" />
 
-            <br/><br/><br/>
+                <label>Código Postal:</label>
+                <form:input path="zipCode" />
+                <form:errors path="zipCode" cssClass="error-message" />
 
-            Email: <form:input path="email" />
-            <form:errors path="email" />
+                <label>Edad:</label>
+                <form:input path="age" type="number"/>
+                <form:errors path="age" cssClass="error-message" />
 
-            <br/><br/><br/>
+                <label>Carrera:</label>
+                <form:select path="major" items="${majors}"/>
+                <form:errors path="major" cssClass="error-message" />
 
-            Código Postal: <form:input path="zipCode" />
-            <form:errors path="zipCode" />
+                <label>Género:</label>
+                <div class="radio-group">
+                    <form:radiobutton path="gender" value="male" label="Hombre"/>
+                    <form:radiobutton path="gender" value="female" label="Mujer" />
+                    <form:radiobutton path="gender" value="other" label="Otro"/>
+                </div>
 
-            <br/><br/><br/>
-
-            Edad: <form:input path="age" type="number"/>
-            <form:errors path="age" />
-
-            <br/><br/><br/>
-
-            <form:select path="major" items="${majors}"/>
-            <form:errors path="major" />
-
-            <br/><br/><br/>
-
-            <form:radiobutton path="gender" value="male" label="Hombre"/>
-            <form:radiobutton path="gender" value="female" label="Mujer" />
-            <form:radiobutton path="gender" value="other" label="Otro"/>
-
-            <br/><br/><br/>
-
-            <button type="submit">Enviar</button>
-        </form:form>
+                <button type="submit" class="btn-enviar">Enviar</button>
+            </form:form>
+        </div>
     </body>
 </html>
