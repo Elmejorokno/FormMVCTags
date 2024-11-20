@@ -9,27 +9,27 @@
         <div class="form-container">
             <h2>Registro de alumnos</h2>
             <form:form action="register" method="post" modelAttribute="student">
-                <label>Nombre:</label>
+                <label for="firstName">Nombre:</label>
                 <form:input path="firstName" />
                 <form:errors path="firstName" cssClass="error-message" />
 
-                <label>Apellidos:</label>
+                <label for="lastName">Apellidos:</label>
                 <form:input path="lastName" />
                 <form:errors path="lastName" cssClass="error-message" />
 
-                <label>Email:</label>
+                <label for="email">Email:</label>
                 <form:input path="email" />
                 <form:errors path="email" cssClass="error-message" />
 
-                <label>Código Postal:</label>
+                <label for="zipCode">Código Postal:</label>
                 <form:input path="zipCode" />
                 <form:errors path="zipCode" cssClass="error-message" />
 
-                <label>Edad:</label>
+                <label for="age">Edad:</label>
                 <form:input path="age" type="number"/>
                 <form:errors path="age" cssClass="error-message" />
 
-                <label>Carrera:</label>
+                <label for="major">Carrera:</label>
                 <form:select path="major" items="${majors}"/>
                 <form:errors path="major" cssClass="error-message" />
 
